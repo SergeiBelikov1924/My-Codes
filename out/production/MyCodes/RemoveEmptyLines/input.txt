@@ -1,0 +1,694 @@
+bsergey@bsergey-VirtualBox:~$ sudo apt update
+
+[sudo] password for bsergey: 
+
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+
+Hit:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease                   
+
+Get:4 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main i386 Packages [609 kB]
+
+Get:5 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1 558 kB]
+
+Get:6 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [297 kB]
+
+Get:7 http://ru.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1 699 kB]
+
+Get:8 http://ru.archive.ubuntu.com/ubuntu jammy-updates/restricted i386 Packages [36,5 kB]
+
+Get:9 http://ru.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [285 kB]
+
+Get:10 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe i386 Packages [698 kB]  
+
+Get:11 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1 060 kB]
+
+Get:12 http://ru.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [49,7 kB]
+
+Get:13 http://ru.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [12,1 kB]
+
+Get:14 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]                                                                    
+
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/main i386 Packages [443 kB]
+
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1 342 kB]
+
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [237 kB]
+
+Get:18 http://security.ubuntu.com/ubuntu jammy-security/restricted i386 Packages [33,6 kB]
+
+Get:19 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1 662 kB]
+
+Get:20 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [280 kB]
+
+Get:21 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [852 kB]
+
+Get:22 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages [599 kB]
+
+Get:23 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [37,2 kB]
+
+Get:24 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [7 588 B]
+
+Fetched 12,0 MB in 35s (347 kB/s)        
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+54 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+ca-certificates is already the newest version (20230311ubuntu0.22.04.1).
+
+software-properties-common is already the newest version (0.99.22.9).
+
+software-properties-common set to manually installed.
+
+The following NEW packages will be installed:
+
+  apt-transport-https curl
+
+0 upgraded, 2 newly installed, 0 to remove and 54 not upgraded.
+
+Need to get 196 kB of archives.
+
+After this operation, 624 kB of additional disk space will be used.
+
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.12 [1 510 B]
+
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 curl amd64 7.81.0-1ubuntu1.16 [194 kB]
+
+Fetched 196 kB in 0s (448 kB/s) 
+
+Selecting previously unselected package apt-transport-https.
+
+(Reading database ... 184743 files and directories currently installed.)
+
+Preparing to unpack .../apt-transport-https_2.4.12_all.deb ...
+
+Unpacking apt-transport-https (2.4.12) ...
+
+Selecting previously unselected package curl.
+
+Preparing to unpack .../curl_7.81.0-1ubuntu1.16_amd64.deb ...
+
+Unpacking curl (7.81.0-1ubuntu1.16) ...
+
+Setting up apt-transport-https (2.4.12) ...
+
+Setting up curl (7.81.0-1ubuntu1.16) ...
+
+Processing triggers for man-db (2.10.2-1) ...
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo apt install curl
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+curl is already the newest version (7.81.0-1ubuntu1.16).
+
+0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+
+OK
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+Repository: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable'
+
+Description:
+
+Archive for codename: jammy components: stable
+
+More info: https://download.docker.com/linux/ubuntu
+
+Adding repository.
+
+Press [ENTER] to continue or Ctrl-c to cancel.
+
+Adding deb entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
+
+Adding disabled deb-src entry to /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list
+
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]                       
+
+Hit:3 http://security.ubuntu.com/ubuntu jammy-security InRelease                                           
+
+Hit:4 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease                                        
+
+Get:5 https://download.docker.com/linux/ubuntu jammy InRelease [48,8 kB]
+
+Get:6 https://download.docker.com/linux/ubuntu jammy/stable amd64 Packages [29,1 kB]
+
+Fetched 197 kB in 1s (140 kB/s)     
+
+Reading package lists... Done
+
+W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo apt update
+
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+
+Hit:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease                                        
+
+Hit:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease                                                           
+
+Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease                                                              
+
+Hit:5 https://download.docker.com/linux/ubuntu jammy InRelease
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+54 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo apt install docker -y
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+The following additional packages will be installed:
+
+  wmdocker
+
+The following NEW packages will be installed:
+
+  docker wmdocker
+
+0 upgraded, 2 newly installed, 0 to remove and 54 not upgraded.
+
+Need to get 14,3 kB of archives.
+
+After this operation, 58,4 kB of additional disk space will be used.
+
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 wmdocker amd64 1.5-2 [13,0 kB]
+
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 docker all 1.5-2 [1 316 B]
+
+Fetched 14,3 kB in 0s (64,2 kB/s)      
+
+Selecting previously unselected package wmdocker.
+
+(Reading database ... 184754 files and directories currently installed.)
+
+Preparing to unpack .../wmdocker_1.5-2_amd64.deb ...
+
+Unpacking wmdocker (1.5-2) ...
+
+Selecting previously unselected package docker.
+
+Preparing to unpack .../archives/docker_1.5-2_all.deb ...
+
+Unpacking docker (1.5-2) ...
+
+Setting up wmdocker (1.5-2) ...
+
+Setting up docker (1.5-2) ...
+
+Processing triggers for man-db (2.10.2-1) ...
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo docker run -d ubuntu
+
+sudo: docker: command not found
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ ll
+
+total 324
+
+drwxr-x--- 19 bsergey bsergey   4096 апр 10 13:12 ./
+
+drwxr-xr-x  7 root    root      4096 мар 23 22:35 ../
+
+-rw-------  1 bsergey bsergey   5498 апр  6 18:26 .bash_history
+
+-rw-r--r--  1 bsergey bsergey    220 мар 17 22:49 .bash_logout
+
+-rw-r--r--  1 bsergey bsergey   3771 мар 17 22:49 .bashrc
+
+drwx------ 13 bsergey bsergey   4096 мар 18 18:55 .cache/
+
+drwx------ 13 bsergey bsergey   4096 мар 18 18:55 .config/
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Desktop/
+
+drwxr-xr-x  3 bsergey bsergey   4096 мар 18 19:08 Documents/
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Downloads/
+
+drwx------  2 bsergey bsergey   4096 мар 17 22:58 .gnupg/
+
+-rw-------  1 bsergey bsergey     20 апр  6 18:12 .lesshst
+
+drwx------  3 bsergey bsergey   4096 мар 17 22:55 .local/
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Music/
+
+-rw-r--r--  1 bsergey bsergey   3872 июн 28  2023 nginx_1.18.0-6ubuntu14.4_amd64.deb
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Pictures/
+
+-rw-r--r--  1 bsergey bsergey    807 мар 17 22:49 .profile
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Public/
+
+-rw-rw-r--  1 bsergey bsergey     66 мар 19 12:33 .selected_editor
+
+drwx------  3 bsergey bsergey   4096 мар 17 22:55 snap/
+
+drwx------  2 bsergey bsergey   4096 мар 17 22:58 .ssh/
+
+-rw-r--r--  1 bsergey bsergey      0 мар 18 18:19 .sudo_as_admin_successful
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Templates/
+
+drwxrwxr-x  2 bsergey bsergey   4096 мар 27 19:12 test/
+
+drwxrwxr-x  3 bsergey bsergey   4096 мар 19 12:34 test3/
+
+-rw-rw-r--  1 bsergey bsergey      7 мар 27 18:27 test.txt
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-clipboard-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-clipboard-tty2-service.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-draganddrop-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-draganddrop-tty2-service.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-hostversion-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-seamless-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-seamless-tty2-service.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-vmsvga-session-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-vmsvga-session-tty2-service.pid
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Videos/
+
+-rw-------  1 bsergey bsergey   1427 мар 19 12:21 .viminfo
+
+-rw-r--r--  1 bsergey bsergey 175730 мар 26  2022 zip_3.0-12build2_amd64.deb
+
+drwxrwxr-x  2 bsergey bsergey   4096 мар 19 17:49 и/
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo apt update
+
+[sudo] password for bsergey: 
+
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+
+Hit:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease                                       
+
+Hit:3 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease                                     
+
+Hit:4 http://security.ubuntu.com/ubuntu jammy-security InRelease                                 
+
+Hit:5 https://download.docker.com/linux/ubuntu jammy InRelease
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+46 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo apt install docker.io -y
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+The following additional packages will be installed:
+
+  bridge-utils containerd git git-man liberror-perl pigz runc ubuntu-fan
+
+Suggested packages:
+
+  ifupdown aufs-tools btrfs-progs cgroupfs-mount | cgroup-lite debootstrap docker-doc rinse zfs-fuse | zfsutils git-daemon-run
+
+  | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+
+The following NEW packages will be installed:
+
+  bridge-utils containerd docker.io git git-man liberror-perl pigz runc ubuntu-fan
+
+0 upgraded, 9 newly installed, 0 to remove and 46 not upgraded.
+
+Need to get 73,5 MB of archives.
+
+After this operation, 287 MB of additional disk space will be used.
+
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 pigz amd64 2.6-1 [63,6 kB]
+
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 bridge-utils amd64 1.7-1ubuntu3 [34,4 kB]
+
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 runc amd64 1.1.7-0ubuntu1~22.04.2 [4 267 kB]
+
+Get:4 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 containerd amd64 1.7.2-0ubuntu1~22.04.1 [36,0 MB]
+
+Get:5 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 docker.io amd64 24.0.5-0ubuntu1~22.04.1 [28,9 MB]                      
+
+Get:6 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 liberror-perl all 0.17029-1 [26,5 kB]                                              
+
+Get:7 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git-man all 1:2.34.1-1ubuntu1.10 [954 kB]                                  
+
+Get:8 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.10 [3 166 kB]                                  
+
+Get:9 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 ubuntu-fan all 0.12.16 [35,2 kB]                                               
+
+Fetched 73,5 MB in 15s (4 763 kB/s)                                                                                                           
+
+Preconfiguring packages ...
+
+Selecting previously unselected package pigz.
+
+(Reading database ... 184764 files and directories currently installed.)
+
+Preparing to unpack .../0-pigz_2.6-1_amd64.deb ...
+
+Unpacking pigz (2.6-1) ...
+
+Selecting previously unselected package bridge-utils.
+
+Preparing to unpack .../1-bridge-utils_1.7-1ubuntu3_amd64.deb ...
+
+Unpacking bridge-utils (1.7-1ubuntu3) ...
+
+Selecting previously unselected package runc.
+
+Preparing to unpack .../2-runc_1.1.7-0ubuntu1~22.04.2_amd64.deb ...
+
+Unpacking runc (1.1.7-0ubuntu1~22.04.2) ...
+
+Selecting previously unselected package containerd.
+
+Preparing to unpack .../3-containerd_1.7.2-0ubuntu1~22.04.1_amd64.deb ...
+
+Unpacking containerd (1.7.2-0ubuntu1~22.04.1) ...
+
+Selecting previously unselected package docker.io.
+
+Preparing to unpack .../4-docker.io_24.0.5-0ubuntu1~22.04.1_amd64.deb ...
+
+Unpacking docker.io (24.0.5-0ubuntu1~22.04.1) ...
+
+Selecting previously unselected package liberror-perl.
+
+Preparing to unpack .../5-liberror-perl_0.17029-1_all.deb ...
+
+Unpacking liberror-perl (0.17029-1) ...
+
+Selecting previously unselected package git-man.
+
+Preparing to unpack .../6-git-man_1%3a2.34.1-1ubuntu1.10_all.deb ...
+
+Unpacking git-man (1:2.34.1-1ubuntu1.10) ...
+
+Selecting previously unselected package git.
+
+Preparing to unpack .../7-git_1%3a2.34.1-1ubuntu1.10_amd64.deb ...
+
+Unpacking git (1:2.34.1-1ubuntu1.10) ...
+
+Selecting previously unselected package ubuntu-fan.
+
+Preparing to unpack .../8-ubuntu-fan_0.12.16_all.deb ...
+
+Unpacking ubuntu-fan (0.12.16) ...
+
+Setting up runc (1.1.7-0ubuntu1~22.04.2) ...
+
+Setting up liberror-perl (0.17029-1) ...
+
+Setting up bridge-utils (1.7-1ubuntu3) ...
+
+Setting up pigz (2.6-1) ...
+
+Setting up git-man (1:2.34.1-1ubuntu1.10) ...
+
+Setting up containerd (1.7.2-0ubuntu1~22.04.1) ...
+
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+
+Setting up ubuntu-fan (0.12.16) ...
+
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.
+
+Setting up docker.io (24.0.5-0ubuntu1~22.04.1) ...
+
+Adding group `docker' (GID 138) ...
+
+Done.
+
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+
+Setting up git (1:2.34.1-1ubuntu1.10) ...
+
+Processing triggers for man-db (2.10.2-1) ...
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo apt update
+
+Hit:1 http://ru.archive.ubuntu.com/ubuntu jammy InRelease
+
+Hit:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates InRelease          
+
+Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]  
+
+Hit:4 http://ru.archive.ubuntu.com/ubuntu jammy-backports InRelease                                         
+
+Hit:5 https://download.docker.com/linux/ubuntu jammy InRelease                                              
+
+Fetched 110 kB in 1s (92,9 kB/s)                         
+
+Reading package lists... Done
+
+Building dependency tree... Done
+
+Reading state information... Done
+
+46 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo docker run -d ubuntu
+
+Unable to find image 'ubuntu:latest' locally
+
+latest: Pulling from library/ubuntu
+
+bccd10f490ab: Pull complete 
+
+Digest: sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e
+
+Status: Downloaded newer image for ubuntu:latest
+
+b3d0e0913bdf2670a42433ddaa3a76b8baefcedf936d6251ea0c542f6a5b2074
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo nano Dockerfile
+
+bsergey@bsergey-VirtualBox:~$ sudo nano Dockerfile
+
+bsergey@bsergey-VirtualBox:~$ ll
+
+total 328
+
+drwxr-x--- 19 bsergey bsergey   4096 апр 10 14:26 ./
+
+drwxr-xr-x  7 root    root      4096 мар 23 22:35 ../
+
+-rw-------  1 bsergey bsergey   5498 апр  6 18:26 .bash_history
+
+-rw-r--r--  1 bsergey bsergey    220 мар 17 22:49 .bash_logout
+
+-rw-r--r--  1 bsergey bsergey   3771 мар 17 22:49 .bashrc
+
+drwx------ 13 bsergey bsergey   4096 мар 18 18:55 .cache/
+
+drwx------ 13 bsergey bsergey   4096 мар 18 18:55 .config/
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Desktop/
+
+-rw-r--r--  1 root    root       225 апр 10 14:25 Dockerfile
+
+drwxr-xr-x  3 bsergey bsergey   4096 мар 18 19:08 Documents/
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Downloads/
+
+drwx------  2 bsergey bsergey   4096 мар 17 22:58 .gnupg/
+
+-rw-------  1 bsergey bsergey     20 апр  6 18:12 .lesshst
+
+drwx------  3 bsergey bsergey   4096 мар 17 22:55 .local/
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Music/
+
+-rw-r--r--  1 bsergey bsergey   3872 июн 28  2023 nginx_1.18.0-6ubuntu14.4_amd64.deb
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Pictures/
+
+-rw-r--r--  1 bsergey bsergey    807 мар 17 22:49 .profile
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Public/
+
+-rw-rw-r--  1 bsergey bsergey     66 мар 19 12:33 .selected_editor
+
+drwx------  3 bsergey bsergey   4096 мар 17 22:55 snap/
+
+drwx------  2 bsergey bsergey   4096 мар 17 22:58 .ssh/
+
+-rw-r--r--  1 bsergey bsergey      0 мар 18 18:19 .sudo_as_admin_successful
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Templates/
+
+drwxrwxr-x  2 bsergey bsergey   4096 мар 27 19:12 test/
+
+drwxrwxr-x  3 bsergey bsergey   4096 мар 19 12:34 test3/
+
+-rw-rw-r--  1 bsergey bsergey      7 мар 27 18:27 test.txt
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-clipboard-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-clipboard-tty2-service.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-draganddrop-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-draganddrop-tty2-service.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-hostversion-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-seamless-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-seamless-tty2-service.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-vmsvga-session-tty2-control.pid
+
+-rw-r-----  1 bsergey bsergey      5 апр 10 13:12 .vboxclient-vmsvga-session-tty2-service.pid
+
+drwxr-xr-x  2 bsergey bsergey   4096 мар 17 22:55 Videos/
+
+-rw-------  1 bsergey bsergey   1427 мар 19 12:21 .viminfo
+
+-rw-r--r--  1 bsergey bsergey 175730 мар 26  2022 zip_3.0-12build2_amd64.deb
+
+drwxrwxr-x  2 bsergey bsergey   4096 мар 19 17:49 и/
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ cat Dockerfile
+
+FROM ubuntu:20.04
+
+MAINTAINER GB_student
+
+RUN apt-get update
+
+RUN apt-get install nginx -y
+
+RUN apt-get install php-fpm -y
+
+RUN mkdir /run/php-fpm
+
+VOLUME "/var/www/html"
+
+EXPOSE 80
+
+CMD /usr/sbin/nginx -g "daemon off;" ; php-fpm -D
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo docker build -t php_fpm
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+
+            Install the buildx component to build images with BuildKit:
+
+            https://docs.docker.com/go/buildx/
+
+
+
+"docker build" requires exactly 1 argument.
+
+See 'docker build --help'.
+
+
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+
+
+Build an image from a Dockerfile
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ sudo docker images
+
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+
+ubuntu       latest    ca2b0f26964c   6 weeks ago   77.9MB
+
+bsergey@bsergey-VirtualBox:~$ 
+
+bsergey@bsergey-VirtualBox:~$ 
+
